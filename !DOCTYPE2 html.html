@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love Mehuli ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #ffb6c1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            cursor: none; /* Hide default cursor */
+        }
+
+        /* Floating Hearts */
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .heart {
+            position: absolute;
+            bottom: 0;
+            font-size: 30px;
+            color: red;
+            animation: float 10s infinite linear;
+        }
+
+	/* Floating Kisses */
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .kissess {
+            position: absolute;
+            bottom: 0;
+            font-size: 30px;
+            color: red;
+            animation: float 10s infinite linear;
+        }
+
+
+        /* Deep Yellow Glowing Cursor */
+        .glow-cursor {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 223, 0, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 223, 0, 1);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Envelope */
+        .envelope {
+            position: absolute;
+            width: 120px;
+            height: 100px;
+            background: #ff4d6d;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            animation: bounce 1s infinite alternate;
+        }
+
+        .envelope::before {
+            content: "📩";
+            font-size: 90px;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* Letter Animation */
+        .letter-container {
+            display: none;
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transform: rotate(-2deg);
+            animation: letterSlide 1s ease-in-out;
+        }
+
+        @keyframes letterSlide {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .from-text {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .question {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Buttons */
+        .btn-container {
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background: #28a745;
+            color: white;
+        }
+
+        .no {
+            background: #dc3545;
+            color: white;
+        }
+
+        .yes:hover {
+            background: #218838;
+        }
+
+        .no:hover {
+            background: #c82333;
+        }
+
+        /* Floating Emojis */
+        .emoji {
+            position: absolute;
+            font-size: 35px;
+            animation: floatEmoji 4s infinite linear;
+        }
+
+        @keyframes floatEmoji {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-150px); opacity: 0; }
+        }
+
+        /* Hidden Audio */
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Hearts -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+
+    <!-- Background Romantic Music -->
+    <audio autoplay loop>
+    <source src="https://yourmusicfilelink.com/romantic_music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+
+    <!-- Envelope Icon -->
+    <div class="envelope" onclick="openLetter()"></div>
+
+    <!-- Letter Content -->
+    <div class="letter-container" id="letterBox">
+        <h1>Happy 6-Month Anniversary, Mehuli! ❤️</h1>
+        <p>Every moment with you is pure magic. From our sweetest kisses to our endless laughter, my heart only beats for you. 🥰</p>
+        <p>You are the sunshine in my life, and I cherish every second spent with you. I promise to make every day as special as today! 💕</p>
+        <p class="from-text">With love, your Saraswat (Tinku) ❤️</p>
+
+        <p class="question">Valentine’s is near... Will you be my Valentine? 💖</p>
+
+        <div class="btn-container">
+            <button class="btn yes" onclick="sayYes()">Yeahhhh! 💞</button>
+            <button class="btn no" onclick="sayNo()">Naahhhh 🙃</button>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.querySelector('.envelope').style.display = 'none';
+            document.getElementById('letterBox').style.display = 'block';
+            document.getElementById("bgMusic").play();
+        }
+
+        function sayYes() {
+            document.getElementById('letterBox').innerHTML = `
+                <h1>Yay! 🎉</h1>
+                <p>Let’s make this Valentine’s special! 💖</p>
+                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.123rf.com%2Fphoto_181843664_sketch-of-a-couple-in-love-in-an-embraceline-art-in-a-minimalist-stylemodern-art.html&psig=AOvVaw3RfLfjvTOLlZVGHiN-qOOD&ust=1738518781454000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCK-KqFo4sDFQAAAAAdAAAAABAg" alt="Love Hug" width="190px">
+            `;
+        }
+
+        function sayNo() {
+            alert("Come on, babe! I am your boyfriend, and I won’t stop until you say YES! 😏");
+        }
+
+        // Glowing Cursor Effect
+        const glowCursor = document.createElement("div");
+        glowCursor.classList.add("glow-cursor");
+        document.body.appendChild(glowCursor);
+
+        document.addEventListener("mousemove", (e) => {
+            glowCursor.style.left = `${e.clientX}px`;
+            glowCursor.style.top = `${e.clientY}px`;
+        });
+    </script>
+
+</body>
+</html>
